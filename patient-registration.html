@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Registration</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="header">
+  <div class="container">
+    <h1 id="register-title">Patient Registration</h1>
+    <p id="register-description">Register as a patient to receive the best care from our doctors.</p>
+    <div class="language-selector">
+      <label for="language-selector">Language:</label>
+      <select id="language-selector" onchange="changeLanguage()">
+        <option value="en">English</option>
+        <option value="hi">हिन्दी</option>
+        <option value="ta">தமிழ்</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main class="container form-container">
+  <form id="patient-form">
+    <div class="form-section">
+      <h2 id="personal-info-title">Personal Information</h2>
+      <div class="form-group">
+        <label for="name" id="name-label">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="age" id="age-label">Age:</label>
+        <input type="number" id="age" name="age" required>
+      </div>
+
+      <div class="form-group">
+        <label for="gender" id="gender-label">Gender:</label>
+        <select id="gender" name="gender">
+          <option value="male" id="male-option">Male</option>
+          <option value="female" id="female-option">Female</option>
+          <option value="other" id="other-option">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="address" id="address-label">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2 id="symptoms-title">Describe Your Problem</h2>
+      <div class="form-group">
+        <label for="problem-description" id="problem-description-label">Problem Description:</label>
+        <textarea id="problem-description" name="problem-description" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="symptoms" id="symptoms-label">Symptoms:</label>
+        <select id="symptoms" name="symptoms">
+          <option value="fever" id="fever-option">Fever</option>
+          <option value="cough" id="cough-option">Cough</option>
+          <option value="headache" id="headache-option">Headache</option>
+          <option value="stomach-pain" id="stomach-pain-option">Stomach Pain</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-section" id="precautions-section">
+      <h2 id="precautions-title">Precautions Based on Symptoms</h2>
+      <p id="precautions-text">Please select a symptom to view precautions.</p>
+    </div>
+
+    <div class="form-section">
+      <h2 id="doctor-appointment-title">Doctor Appointment</h2>
+      <p id="doctor-recommendation">Based on your symptoms, we recommend the following specialists:</p>
+      <ul id="doctor-list">
+        <!-- Doctor recommendations will be dynamically populated here -->
+      </ul>
+    </div>
+
+    <!-- Microphone button -->
+    <button type="button" id="start-record-btn" onclick="startRecording()">🎤 Start Recording</button>
+    <p id="recording-status"></p>
+
+    <button type="submit" id="submit-btn">Submit</button>
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2024 Health Portal | All Rights Reserved</p>
+</footer>
+
+<script src="scripts.js"></script>
+</body>
+</html>
